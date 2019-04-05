@@ -5,11 +5,11 @@
 #
 # Then, build the image with:
 #
-# docker build -f src/main/docker/Dockerfile -t quarkus/getting-started .
+# docker build -f src/main/docker/Dockerfile -t quarkus-example .
 #
 # Then run the container using:
 #
-# docker run -i --rm -p 8080:8080 quarkus/getting-started
+# docker run -i --rm -p 8080:8080 quarkus-example
 #
 ###
 FROM registry.fedoraproject.org/fedora-minimal

@@ -1,12 +1,18 @@
 version: '2'
 services:
+#  app:
+#    build: .
+#    volumes:
+#    - .:/app
+#    - ~/.m2:/root/.m2
+#    working_dir: /app
+#    command: bash -c "mvn clean package && java -jar target/quarkus-example-1.0-SNAPSHOT-runner.jar"
+#    ports:
+#    - 8080:8080
   app:
-    build: .
-    volumes:
-    - .:/app
-    - ~/.m2:/root/.m2
-    working_dir: /app
-    command: bash -c "mvn clean package && java -jar target/quarkus-example-1.0-SNAPSHOT-runner.jar"
+    build:
+      context: .     
+      dockerfile: src/main/docker/Dockerfile
     ports:
     - 8080:8080
 
