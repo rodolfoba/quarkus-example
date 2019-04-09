@@ -1,35 +1,33 @@
-version: '2'
+version: '3'
 services:
-#  app:
-#    build: .
+  application:
+    build: .
 #    volumes:
 #    - .:/app
-#    - ~/.m2:/root/.m2
-#    working_dir: /app
-#    command: bash -c "mvn clean package && java -jar target/quarkus-example-1.0-SNAPSHOT-runner.jar"
-#    ports:
-#    - 8080:8080
-  app:
-    build:
-      context: .     
-      dockerfile: src/main/docker/Dockerfile
+#    - ~/.m2/repository:/root/.m2/repository
     ports:
     - 8080:8080
+#  application-native:
+#    build:
+#      context: .     
+#      dockerfile: src/main/docker/Dockerfile
+#    ports:
+#    - 8080:8080
 
-  prom:
+  prometheus:
     image: prom/prometheus:v2.8.1
     volumes:
     - ./prometheus.yml:/etc/prometheus/prometheus.yml
     command: --config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/prometheus
     ports:
     - 9090:9090
-    depends_on:
-    - app
+#    depends_on:
+#    - appication
 
   grafana:
     image: grafana/grafana:6.1.0
     ports:
     - 3000:3000
     depends_on:
-    - prom
+    - prometheus
 
