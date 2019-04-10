@@ -1,27 +1,12 @@
 version: '3'
 services:
-##JVM mode
-  application:
-    build: .
-    ports:
-    - 8080:8080
-##NATIVE mode
-#  application:
-#    build:
-#      context: .     
-#      dockerfile: src/main/docker/Dockerfile
-#    ports:
-#    - 8080:8080
-
   prometheus:
     image: prom/prometheus:v2.8.1
     volumes:
-    - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    - ./prometheus-dev.yml:/etc/prometheus/prometheus.yml
     command: --config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/prometheus
     ports:
     - 9090:9090
-    depends_on:
-    - application
 
   grafana:
     image: grafana/grafana:6.1.0
