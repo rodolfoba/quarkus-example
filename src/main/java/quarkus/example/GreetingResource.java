@@ -47,7 +47,7 @@ public class GreetingResource {
 //        if (falha) {
 //            throw new RuntimeException();
 //        }
-        TimeUnit.SECONDS.sleep(ThreadLocalRandom.current().nextInt(5));
+        TimeUnit.SECONDS.sleep(ThreadLocalRandom.current().nextInt(4));
         TimeUnit.SECONDS.sleep(1);
         return "hello";
     }
