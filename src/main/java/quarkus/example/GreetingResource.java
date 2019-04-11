@@ -43,12 +43,17 @@ public class GreetingResource {
     @CircuitBreaker(delay = 1, delayUnit = ChronoUnit.SECONDS, failureRatio = 0.90, requestVolumeThreshold = 20)
     @Timeout(unit = ChronoUnit.SECONDS, value = 5)
     public String hello() throws Exception {
+<<<<<<< Upstream, based on origin/master
 //        boolean falha = ThreadLocalRandom.current().nextBoolean();
 //        if (falha) {
 //            throw new RuntimeException();
 //        }
         TimeUnit.SECONDS.sleep(ThreadLocalRandom.current().nextInt(4));
         TimeUnit.SECONDS.sleep(1);
+=======
+        TimeUnit.SECONDS.sleep(ThreadLocalRandom.current().nextInt(3));
+//        TimeUnit.SECONDS.sleep(1);
+>>>>>>> f46df4f Change sleep time
         return "hello";
     }
 
