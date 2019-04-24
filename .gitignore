@@ -6,3 +6,4 @@ target/
 .settings/
 quarkus.log
 /jmeter.log
+ObjectStore/

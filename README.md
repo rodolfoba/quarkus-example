@@ -1,7 +1,8 @@
 # Quarkus example application
 [Quarkus](https://quarkus.io)
 
-* Quarkus native application
+* Quarkus application
+* MicroProfile Health / Metrics / Fault Tolerance / OpenAPI / SwaggerUI
 * Prometheus
 * Grafana
 
@@ -9,11 +10,26 @@
 * [Maven 3.5.3+](https://maven.apache.org/install.html)
 * [Java - OpenJDK 1.8+](https://adoptopenjdk.net/)
 
-## Running native-mode
+## Running application in development mode
 ```bash
-$ mvn package -Pnative -Dnative-image.docker-build=true
+$ docker-compose up postgres
+$ mvn clean compile quarkus-dev
+```
+
+## Running jvm-mode
+```bash
+$ cp src/main/docker/Dockerfile.jvm src/main/docker/Dockerfile
+$ mvn clean package
 $ docker-compose up
 ```
+
+## Running native-mode
+```bash
+$ cp src/main/docker/Dockerfile.native src/main/docker/Dockerfile
+$ mvn clean package -Pnative -Dnative-image.docker-build=true
+$ docker-compose up
+```
+
 * swagger-ui at: http://localhost:8080/swagger-ui/index.html
 * http://localhost:8080/hello or http://localhost:8080/hello/greeting/{name}
 * Grafana at: http://localhost:3000
