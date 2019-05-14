@@ -3,6 +3,7 @@
 
 * Quarkus application
 * MicroProfile Health / Metrics / Fault Tolerance / OpenAPI / SwaggerUI
+* Flyway DB 
 * Prometheus
 * Grafana
 
@@ -32,5 +33,3 @@ $ docker-compose up --build
 
 * swagger-ui at: http://localhost:8080/swagger-ui/index.html
 * Grafana at: http://localhost:3000 | Login as  admin/admin
-
-
