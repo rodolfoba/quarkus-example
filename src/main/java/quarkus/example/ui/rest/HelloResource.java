@@ -1,6 +1,6 @@
 package quarkus.example.ui.rest;
 
-import static javax.ws.rs.core.MediaType.TEXT_PLAIN;
+import quarkus.example.application.hello.HelloApplication;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -9,7 +9,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import quarkus.example.application.HelloApplication;
+import static javax.ws.rs.core.MediaType.TEXT_PLAIN;
 
 @RequestScoped
 @Path("/hello")
