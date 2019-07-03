@@ -1,5 +1,8 @@
 package quarkus.example.infrastructure.tracing;
 
+import quarkus.example.library.UseCaseException;
+import quarkus.example.library.DomainException;
+
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
@@ -10,8 +13,23 @@ public class TraceableInterceptor {
 
     @AroundInvoke
     public Object aroundInvoke(InvocationContext context) throws Exception {
-        System.out.println("intercepting...");
-        return context.proceed();
+        String useCase = context.getMethod().getDeclaringClass().getSuperclass().getSimpleName();
+        Object[] parameters = context.getParameters();
+
+        System.out.println(useCase + " requested with values: " + parameters);
+        Object object;
+        try {
+            object = context.proceed();
+        } catch (UseCaseException | DomainException e) {
+            System.out.println(useCase + " refused: " + e.getMessage());
+            throw e;
+        } catch (Exception e) {
+            System.out.println(useCase + " failed: " + e.getMessage());
+            throw e;
+        }
+
+        System.out.println(useCase + " accomplished");
+        return object;
     }
 
 }

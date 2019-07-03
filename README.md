@@ -9,12 +9,12 @@
 
 ## Prerequisites
 * [Maven 3.5.3+](https://maven.apache.org/install.html)
-* [Java - OpenJDK 1.8+](https://adoptopenjdk.net/)
+* [Java - JDK 11](https://adoptopenjdk.net/)
 
 ## Running application in development mode
 ```bash
 $ docker-compose up postgres
-$ mvn clean compile quarkus-dev
+$ mvn clean compile quarkus:dev
 ```
 
 ## Running jvm-mode
