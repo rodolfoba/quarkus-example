@@ -1,10 +1,10 @@
 package quarkus.example.feature.hello.ui;
 
-import quarkus.example.feature.hello.application.HelloUseCase;
-import quarkus.example.feature.hello.domain.Name;
+import quarkus.example.feature.hello.HelloUseCase;
+import quarkus.example.feature.hello.Name;
+import quarkus.example.feature.hello.ValidName;
 import quarkus.example.library.UseCaseException;
 import quarkus.example.library.DomainException;
-import quarkus.example.feature.hello.infrastructure.beanvalidation.ValidName;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -28,7 +28,6 @@ public class HelloResource {
             return useCase.execute(new Name(name));
         } catch (UseCaseException | DomainException e) {
             throw new BadRequestException(Response.status(Response.Status.BAD_REQUEST).entity(e.getMessage()).build());
-
         }
     }
     

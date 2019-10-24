@@ -1,4 +1,4 @@
-package quarkus.example.feature.hello.domain.exception;
+package quarkus.example.feature.hello.exception;
 
 import quarkus.example.library.DomainException;
 

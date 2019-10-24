@@ -1,4 +1,4 @@
-package quarkus.example.feature.hello.domain.event;
+package quarkus.example.feature.hello.event;
 
 import quarkus.example.infrastructure.tracing.Trace;
 

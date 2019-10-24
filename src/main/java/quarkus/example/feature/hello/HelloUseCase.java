@@ -1,9 +1,6 @@
-package quarkus.example.feature.hello.application;
+package quarkus.example.feature.hello;
 
-import quarkus.example.feature.hello.domain.exception.HelloNotAllowedException;
-import quarkus.example.feature.hello.domain.HelloRepository;
-import quarkus.example.feature.hello.domain.Hello;
-import quarkus.example.feature.hello.domain.Name;
+import quarkus.example.feature.hello.exception.HelloNotAllowedException;
 import quarkus.example.library.UseCase;
 
 import java.time.LocalDateTime;

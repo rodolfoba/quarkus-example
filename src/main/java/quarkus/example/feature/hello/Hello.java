@@ -1,6 +1,6 @@
-package quarkus.example.feature.hello.domain;
+package quarkus.example.feature.hello;
 
-import quarkus.example.feature.hello.domain.exception.HelloNotAllowedException;
+import quarkus.example.feature.hello.exception.HelloNotAllowedException;
 
 import java.time.LocalDateTime;
 
@@ -35,7 +35,7 @@ public class Hello {
     }
 
     public String getMessage() {
-        return "Hello " + name.getValue() + " at " + occurredAt.toString();
+        return "Hello " + name.value() + " at " + occurredAt.toString();
     }
     
 }

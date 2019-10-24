@@ -1,4 +1,4 @@
-package quarkus.example.feature.hello.infrastructure.beanvalidation;
+package quarkus.example.feature.hello;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

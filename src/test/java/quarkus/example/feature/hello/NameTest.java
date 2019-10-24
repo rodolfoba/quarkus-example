@@ -1,7 +1,7 @@
-package quarkus.example.domain;
+package quarkus.example.feature.hello;
 
 import org.junit.jupiter.api.Test;
-import quarkus.example.feature.hello.domain.Name;
+import quarkus.example.feature.hello.Name;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -21,6 +21,6 @@ class NameTest {
     void creation() {
         String value = "Name";
         Name name = new Name(value);
-        assertEquals(value, name.getValue());
+        assertEquals(value, name.value());
     }
 }

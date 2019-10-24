@@ -1,7 +1,6 @@
-package quarkus.example.feature.hello.infrastructure.beanvalidation;
+package quarkus.example.feature.hello;
 
 
-import quarkus.example.feature.hello.domain.Name;
 import quarkus.example.library.ExceptionChecker;
 
 import javax.validation.ConstraintValidator;

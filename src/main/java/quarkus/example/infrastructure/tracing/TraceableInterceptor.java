@@ -6,6 +6,7 @@ import quarkus.example.library.DomainException;
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
+import java.util.Arrays;
 
 @Interceptor
 @Traceable
@@ -16,7 +17,7 @@ public class TraceableInterceptor {
         String useCase = context.getMethod().getDeclaringClass().getSuperclass().getSimpleName();
         Object[] parameters = context.getParameters();
 
-        System.out.println(useCase + " requested with values: " + parameters);
+        System.out.println(useCase + " requested with values: " + Arrays.toString(parameters));
         Object object;
         try {
             object = context.proceed();
@@ -28,7 +29,7 @@ public class TraceableInterceptor {
             throw e;
         }
 
-        System.out.println(useCase + " accomplished");
+        System.out.println(useCase + " accomplished with output: " + object);
         return object;
     }
 

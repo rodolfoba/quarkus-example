@@ -1,20 +1,20 @@
-package quarkus.example.feature.hello.infrastructure;
+package quarkus.example.feature.hello;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
-import quarkus.example.feature.hello.domain.HelloRepository;
-import quarkus.example.feature.hello.domain.Hello;
+import quarkus.example.feature.hello.Hello;
+import quarkus.example.feature.hello.HelloRepository;
 
 import javax.enterprise.context.Dependent;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Dependent
-public class JpaHelloRepository implements HelloRepository {
+class JpaHelloRepository implements HelloRepository {
 
     @Override
     public void save(Hello hello) {
         HelloEntity entity = new HelloEntity();
-        entity.name = hello.getName().getValue();
+        entity.name = hello.getName().value();
         entity.occurredAt = hello.getOccurredAt();
         entity.persist();
     }

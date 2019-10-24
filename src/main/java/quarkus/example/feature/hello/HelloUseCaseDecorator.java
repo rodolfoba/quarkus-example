@@ -1,7 +1,5 @@
-package quarkus.example.feature.hello.application;
+package quarkus.example.feature.hello;
 
-import quarkus.example.feature.hello.domain.HelloRepository;
-import quarkus.example.feature.hello.domain.Name;
 import quarkus.example.infrastructure.tracing.Traceable;
 
 import javax.enterprise.context.Dependent;
@@ -9,10 +7,10 @@ import javax.inject.Inject;
 import javax.transaction.Transactional;
 
 @Dependent
-public class HelloApplication extends HelloUseCase {
+public class HelloUseCaseDecorator extends HelloUseCase {
 
     @Inject
-    public HelloApplication(HelloRepository repository) {
+    public HelloUseCaseDecorator(HelloRepository repository) {
         super(repository);
     }
 
