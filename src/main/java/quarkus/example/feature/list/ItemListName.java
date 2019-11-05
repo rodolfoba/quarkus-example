@@ -1,13 +1,13 @@
-package quarkus.example.feature.hello;
+package quarkus.example.feature.list;
 
 import quarkus.example.library.ExceptionChecker;
 import quarkus.example.library.ValueObject;
 
 import java.util.Objects;
 
-public class Name extends ValueObject<String> {
+public class ItemListName extends ValueObject<String> {
 
-    public Name(String value) {
+    public ItemListName(String value) {
         super(value);
 
         Objects.requireNonNull(value, "Name cannot be null");
@@ -21,7 +21,7 @@ public class Name extends ValueObject<String> {
     }
 
     public static boolean isValid(String value) {
-        return ExceptionChecker.isValid(() -> new Name(value));
+        return ExceptionChecker.isValid(() -> new ItemListName(value));
     }
 
 }

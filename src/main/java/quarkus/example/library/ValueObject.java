@@ -18,7 +18,7 @@ public abstract class ValueObject<T> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ValueObject<T> that = (ValueObject<T>) o;
+        var that = (ValueObject<?>) o;
         return Objects.equals(value, that.value);
     }
 

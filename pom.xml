@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <quarkus.version>0.26.1</quarkus.version>
+        <quarkus.version>0.28.1</quarkus.version>
         <surefire-plugin.version>2.22.1</surefire-plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>11</maven.compiler.source>
@@ -84,13 +84,22 @@
         </dependency>
         <!-- Quarkus embedded dependencies -->
 
-        <!-- Unit tests dependencies -->
+        <!-- Tests dependencies -->
+        <!-- Quarkus JUnit5 -->
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-junit5</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- Unit tests dependencies -->
+
+        <!-- Make it Easy - Test Data Builder -->
+        <dependency>
+            <groupId>com.natpryce</groupId>
+            <artifactId>make-it-easy</artifactId>
+            <version>4.0.1</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Tests dependencies -->
     </dependencies>
 
     <build>
