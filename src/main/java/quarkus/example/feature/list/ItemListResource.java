@@ -14,8 +14,12 @@ import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 @Path("/list")
 public class ItemListResource {
 
+    private ItemListRepository itemListRepository;
+
     @Inject
-    ItemListRepository itemListRepository;
+    public ItemListResource(ItemListRepository itemListRepository) {
+        this.itemListRepository = itemListRepository;
+    }
 
     @GET
     @Path("/{id}")
@@ -49,4 +53,16 @@ public class ItemListResource {
         return new ItemListRestDto(list.getId().value(), list.getName().value());
     }
 
+    public static class ItemListRestDto {
+
+        public UUID id;
+        public String name;
+
+        public ItemListRestDto() {}
+
+        public ItemListRestDto(UUID id, String name) {
+            this.id = id;
+            this.name = name;
+        }
+    }
 }
