@@ -1,4 +1,4 @@
-package quarkus.example.test;
+package quarkus.example.library.test;
 
 import org.junit.jupiter.api.Tag;
 
@@ -8,9 +8,9 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Tag(TestTags.ACCEPTANCE)
+@Tag(TestTags.INTEGRATION)
 @Stereotype
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-public @interface AcceptanceTest {
+public @interface IntegrationTest {
 }

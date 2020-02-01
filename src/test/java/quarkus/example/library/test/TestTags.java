@@ -1,4 +1,4 @@
-package quarkus.example.test;
+package quarkus.example.library.test;
 
 public class TestTags {
 

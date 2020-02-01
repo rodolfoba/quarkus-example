@@ -1,20 +1,19 @@
 package quarkus.example.feature.list;
 
-import io.quarkus.test.junit.QuarkusTest;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import quarkus.example.test.IntegrationTest;
-
-import javax.inject.Inject;
-import javax.transaction.Transactional;
-
-import java.util.List;
-
 import static com.natpryce.makeiteasy.MakeItEasy.an;
 import static com.natpryce.makeiteasy.MakeItEasy.make;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static quarkus.example.feature.list.ItemListMaker.ItemList;
+
+import javax.inject.Inject;
+import javax.transaction.Transactional;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import io.quarkus.test.junit.QuarkusTest;
+import quarkus.example.library.test.IntegrationTest;
 
 @IntegrationTest
 @QuarkusTest

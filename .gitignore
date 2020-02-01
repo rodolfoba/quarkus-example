@@ -4,6 +4,7 @@ target/
 .classpath
 .project
 .settings/
+.vscode/
 quarkus.log
 /jmeter.log
 ObjectStore/

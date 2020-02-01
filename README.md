@@ -32,5 +32,5 @@ $ docker-compose up --build
 ```
 
 ## Endpoints
-* swagger-ui at: http://localhost:8080/swagger-ui/index.html
+* swagger-ui at: http://localhost:8080/swagger-ui
 * Grafana at: http://localhost:3000 | Login as admin/admin

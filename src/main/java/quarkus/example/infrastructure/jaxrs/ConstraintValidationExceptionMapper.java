@@ -11,7 +11,6 @@ public class ConstraintValidationExceptionMapper implements ExceptionMapper<Cons
     @Override
     public Response toResponse(ConstraintViolationException exception) {
         return Response.status(Response.Status.BAD_REQUEST)
-                .entity(exception.getConstraintViolations().iterator().next().getMessage())
-                .build();
+                .entity(exception.getConstraintViolations().iterator().next().getMessage()).build();
     }
 }
