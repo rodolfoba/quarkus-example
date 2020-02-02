@@ -25,7 +25,7 @@ public class JpaItemListRepositoryTest {
 
     @BeforeEach
     public void beforeEach() {
-        JpaItemListRepository.ItemListEntity.deleteAll();
+        ItemListEntity.deleteAll();
     }
 
     @Test

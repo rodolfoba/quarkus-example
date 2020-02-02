@@ -52,7 +52,8 @@ public class ItemListResourceV1_0 {
     @Transactional
     public Response add(ItemListRestDto list) {
         itemListRepository.add(toItemList(list));
-        return Response.created(UriBuilder.fromMethod(ItemListResourceV1_0.class, "add").build()).build();
+        return Response.created(UriBuilder.fromResource(ItemListResourceV1_0.class)
+                .path(ItemListResourceV1_0.class, "add").path(list.id.toString()).build()).build();
     }
 
     private static ItemList toItemList(ItemListRestDto dto) {
@@ -68,7 +69,8 @@ public class ItemListResourceV1_0 {
         public UUID id;
         public String name;
 
-        public ItemListRestDto() {}
+        public ItemListRestDto() {
+        }
 
         public ItemListRestDto(UUID id, String name) {
             this.id = id;
