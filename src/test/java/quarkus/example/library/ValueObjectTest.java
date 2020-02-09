@@ -8,7 +8,7 @@ class ValueObjectTest {
     @Test
     void anIntegerValueObject() {
         var one = new AnIntegerValueObject(1);
-        assertEquals(1, one.value());
+        assertEquals(0, one.value());
 
         var anotherOne = new AnIntegerValueObject(1);
         assertTrue(one.sameAs(anotherOne));

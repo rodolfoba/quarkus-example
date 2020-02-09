@@ -13,5 +13,5 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 11
-    - name: Build with Maven
-      run: mvn clean test package --batch-mode --file pom.xml 
+    - name: Build, unit test and package with Maven
+      run: mvn clean package --batch-mode --file pom.xml 
