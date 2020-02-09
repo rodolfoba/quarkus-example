@@ -1,4 +1,7 @@
 # Quarkus example application
+
+![Java CI](https://github.com/rodolfoba/quarkus-example/workflows/Java%20CI/badge.svg)
+
 [Quarkus](https://quarkus.io)
 
 * Quarkus application
