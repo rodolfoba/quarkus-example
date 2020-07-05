@@ -23,10 +23,8 @@ public class TraceableInterceptor {
             object = context.proceed();
         } catch (UseCaseException | DomainException e) {
             System.out.println(useCase + " refused: " + e.getMessage());
-            throw e;
         } catch (Exception e) {
             System.out.println(useCase + " failed: " + e.getMessage());
-            throw e;
         }
 
         System.out.println(useCase + " accomplished with output: " + object);
